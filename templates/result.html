@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        h1 { color: #333; }
+        h2 { color: #4CAF50; }
+        ul { margin: 10px 0 20px 20px; }
+        p, li { line-height: 1.6; }
+        a { color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Recommendations for: {{ problem }}</h1>
+    
+    <h2>Medicine</h2>
+    <p>{{ recommendations.medicine or "No medicine recommendation provided." }}</p>
+
+    <h2>Diet Recommendations</h2>
+    <ul>
+        {% for item in recommendations.diet %}
+            <li>{{ item }}</li>
+        {% else %}
+            <li>No diet recommendations provided.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Food Suggestions</h2>
+    <ul>
+        {% for item in recommendations.food %}
+            <li>{{ item }}</li>
+        {% else %}
+            <li>No food suggestions provided.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Workout Recommendations</h2>
+    <ul>
+        {% for item in recommendations.workout %}
+            <li>{{ item }}</li>
+        {% else %}
+            <li>No workout recommendations provided.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Back to Home</a>
+</body>
+</html>

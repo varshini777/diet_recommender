@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Healthcare Recommendation System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 50px; }
+        h1 { color: #333; }
+        label { display: block; margin: 10px 0 5px; }
+        input, textarea { width: 100%; max-width: 400px; padding: 8px; }
+        button { margin-top: 20px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <h1>Healthcare Recommendation System</h1>
+    <form action="/recommend" method="POST">
+        <label for="problem">What health problem are you facing?</label>
+        <input type="text" id="problem" name="problem" required>
+
+        <label for="age">Your age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" required>
+
+        <label for="dietary_preferences">Dietary preferences (e.g., vegetarian, low-carb):</label>
+        <input type="text" id="dietary_preferences" name="dietary_preferences" required>
+
+        <label for="additional_info">Medication (e.g.Tablet,Syrup):</label>
+        <textarea id="additional_info" name="additional_info" rows="4"></textarea>
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>
